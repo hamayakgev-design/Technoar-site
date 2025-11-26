@@ -1,0 +1,218 @@
+{
+  "brands": [
+    {
+      "id": "nobel",
+      "name": "Nobel® compatible",
+      "description": "Sample brand description (replace with real Technoar data).",
+      "sections": [
+        {
+          "id": "multiunit",
+          "title": "Multi-unit abutments",
+          "products": [
+            {
+              "id": "nobel-mua-17-rp-2",
+              "name": "MUA 17° – RP",
+              "imageUrl": "https://via.placeholder.com/300x180?text=Nobel+MUA+17%C2%B0",
+              "meta": "Height: 2 / 3 / 4mm",
+              "more": "Material: Ti | Connection: Internal hex",
+              "code": "TNA-N-MUA17-RP-2"
+            }
+          ]
+        },
+        {
+          "id": "tibases",
+          "title": "Ti-bases",
+          "products": [
+            {
+              "id": "nobel-tb-rp-10",
+              "name": "Ti-base RP 10mm",
+              "imageUrl": "https://via.placeholder.com/300x180?text=Ti-base+RP+10mm",
+              "meta": "Cementation height: 10mm",
+              "more": "Material: Ti | For zirconia crowns",
+              "code": "TNA-N-TB-RP-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_4vwx5q",
+      "name": "Dentium",
+      "description": "",
+      "sections": [
+        {
+          "id": "section_g2a0cl",
+          "title": "FORMIK",
+          "products": [
+            {
+              "id": "prod_02v22k",
+              "name": "FORMIK",
+              "imageUrl": "images/logo.png",
+              "meta": "D-7 H-1.2.3",
+              "more": "DFSFDSF",
+              "code": "DSFDSFSD"
+            }
+          ]
+        },
+        {
+          "id": "section_xeaoms",
+          "title": "multiunit",
+          "products": [
+            {
+              "id": "prod_cfa3jq",
+              "name": "30 GR",
+              "imageUrl": "images/logo.png",
+              "meta": "D-7 H-1.2.3",
+              "more": "hex",
+              "code": "Ti grade"
+            },
+            {
+              "id": "prod_k7k1jy",
+              "name": "ffffff",
+              "imageUrl": "images/logo.png",
+              "meta": "hhh",
+              "more": "hhhh",
+              "code": "hhhh"
+            },
+            {
+              "id": "prod_ah2n9e",
+              "name": "MU 17deg",
+              "imageUrl": "images/logo.png",
+              "meta": "4",
+              "more": "Titanium Grade 5",
+              "code": "Hex"
+            }
+          ]
+        },
+        {
+          "id": "section_7u9rli",
+          "title": "Ti Base",
+          "products": [
+            {
+              "id": "prod_3xm9cw",
+              "name": "D-4.3 H-1.2.3.4",
+              "imageUrl": "images/logo.png",
+              "meta": "2",
+              "more": "Hex",
+              "code": "Ti Grade 5"
+            },
+            {
+              "id": "prod_2d0q71",
+              "name": "gggggg",
+              "imageUrl": "images/logo.png",
+              "meta": "HHHHHH",
+              "more": "aaaaa",
+              "code": "eeee"
+            },
+            {
+              "id": "prod_swtk07",
+              "name": "sssdsdsd",
+              "imageUrl": "images/logo.png",
+              "meta": "hhhhh",
+              "more": "jjjjjj",
+              "code": "uuuuu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_1mx065",
+      "name": "Contakt",
+      "description": "",
+      "sections": [
+        {
+          "id": "section_ffsii0",
+          "title": "Mobile",
+          "products": [
+            {
+              "id": "prod_ybbblw",
+              "name": "+37498152850",
+              "imageUrl": "",
+              "meta": "wwhatsapp",
+              "more": "+37498152850",
+              "code": "Beknazaryan 5/6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_y86mi4",
+      "name": "Osstem",
+      "description": "",
+      "sections": [
+        {
+          "id": "section_s0y5ak",
+          "title": "Ti Base",
+          "products": [
+            {
+              "id": "prod_z92hsn",
+              "name": "D-4.3 H-1.2.3.4",
+              "imageUrl": "",
+              "meta": "3",
+              "more": "Hex",
+              "code": "Ti Grade 5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_l8s6wj",
+      "name": "Biotech Kontakt",
+      "description": "",
+      "sections": [
+        {
+          "id": "section_1kbr3s",
+          "title": "Ti Base",
+          "products": [
+            {
+              "id": "prod_bzjg5g",
+              "name": "scfsdc",
+              "imageUrl": "images/logo.png",
+              "meta": "H-1.2.3.4",
+              "more": "Hex",
+              "code": "Ti Grade 5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_wlcpcj",
+      "name": "NeoDent",
+      "description": "",
+      "sections": [
+        {
+          "id": "section_wj22ub",
+          "title": "MultiUnit",
+          "products": [
+            {
+              "id": "prod_rb7tjr",
+              "name": "dfgfdgdfg",
+              "imageUrl": "images/logo.png",
+              "meta": "ghjghjghj",
+              "more": "eferrwtrfewrf",
+              "code": "hkjhjkhjkhjk"
+            }
+          ]
+        },
+        {
+          "id": "section_w2gcnd",
+          "title": "Ti Base",
+          "products": [
+            {
+              "id": "prod_2os4ic",
+              "name": "fffffff",
+              "imageUrl": "images/logo.png",
+              "meta": "jkhkhjkh",
+              "more": "hjkfhgjdg",
+              "code": "hgdfghdf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
