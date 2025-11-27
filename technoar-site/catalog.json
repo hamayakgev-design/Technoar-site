@@ -43,29 +43,12 @@
         {
           "id": "section_g2a0cl",
           "title": "FORMIK",
-          "products": [
-            {
-              "id": "prod_02v22k",
-              "name": "FORMIK",
-              "imageUrl": "images/logo.png",
-              "meta": "D-7 H-1.2.3",
-              "more": "DFSFDSF",
-              "code": "DSFDSFSD"
-            }
-          ]
+          "products": []
         },
         {
           "id": "section_xeaoms",
           "title": "multiunit",
           "products": [
-            {
-              "id": "prod_cfa3jq",
-              "name": "30 GR",
-              "imageUrl": "images/logo.png",
-              "meta": "D-7 H-1.2.3",
-              "more": "hex",
-              "code": "Ti grade"
-            },
             {
               "id": "prod_k7k1jy",
               "name": "ffffff",
@@ -88,14 +71,6 @@
           "id": "section_7u9rli",
           "title": "Ti Base",
           "products": [
-            {
-              "id": "prod_3xm9cw",
-              "name": "D-4.3 H-1.2.3.4",
-              "imageUrl": "images/logo.png",
-              "meta": "2",
-              "more": "Hex",
-              "code": "Ti Grade 5"
-            },
             {
               "id": "prod_2d0q71",
               "name": "gggggg",
