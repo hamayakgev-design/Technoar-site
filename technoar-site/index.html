@@ -1,99 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Technoar – Entry</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Simple minimal styling, just for orientation */
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f5f5f5;
-    }
-
-    .box {
-      background: #ffffff;
-      padding: 24px 28px;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.06);
-      max-width: 360px;
-      width: 100%;
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      margin: 6px 0;
-      padding: 10px 14px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      background: #fff;
-      text-decoration: none;
-      color: #222;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .btn.primary {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
-    small {
-      display: block;
-      margin-top: 10px;
-      color: #777;
-      font-size: 12px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; URL=Technoar.html" />
+    <title>Redirecting…</title>
 </head>
 <body>
-  <div class="box">
-    <h1>Technoar® Internal Panel</h1>
-
-    <button class="btn primary" id="btnCatalog">Open Catalog</button>
-    <button class="btn" id="btnAdmin">Open Admin</button>
-
-    <small>Internal use only</small>
-  </div>
-
-  <script>
-    // ============================================
-    // [TNA-INDEX] SECTION 1: Navigation buttons
-    // - Connects buttons to Technoar.html and Admin.html
-    // - If later you want password checks, we extend here
-    // ============================================
-    (function () {
-      var btnCatalog = document.getElementById('btnCatalog');
-      var btnAdmin   = document.getElementById('btnAdmin');
-
-      if (btnCatalog) {
-        btnCatalog.addEventListener('click', function () {
-          // TODO: if you ever want a password gate for catalog,
-          // add logic here before redirect.
-          window.location.href = 'Technoar.html';
-        });
-      }
-
-      
-      })();
-    // ============================================
-    // [TNA-INDEX] END
-    // ============================================
-  </script>
 </body>
 </html>
