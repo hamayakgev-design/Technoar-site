@@ -1,133 +1,39 @@
 {
   "brands": [
     {
-      "id": "nobel",
-      "name": "Nobel® compatible",
-      "description": "Sample brand description (replace with real Technoar data).",
-      "sections": [
-        {
-          "id": "multiunit",
-          "title": "Multi-unit abutments",
-          "products": [
-            {
-              "id": "nobel-mua-17-rp-2",
-              "name": "MUA 17° – RP",
-              "imageUrl": "https://via.placeholder.com/300x180?text=Nobel+MUA+17%C2%B0",
-              "meta": "Height: 2 / 3 / 4mm",
-              "more": "Material: Ti | Connection: Internal hex",
-              "code": "TNA-N-MUA17-RP-2"
-            }
-          ]
-        },
-        {
-          "id": "tibases",
-          "title": "Ti-bases",
-          "products": [
-            {
-              "id": "nobel-tb-rp-10",
-              "name": "Ti-base RP 10mm",
-              "imageUrl": "https://via.placeholder.com/300x180?text=Ti-base+RP+10mm",
-              "meta": "Cementation height: 10mm",
-              "more": "Material: Ti | For zirconia crowns",
-              "code": "TNA-N-TB-RP-10"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "brand_4vwx5q",
       "name": "Dentium",
       "description": "",
+      "order": 1,
       "sections": [
-        {
-          "id": "section_g2a0cl",
-          "title": "FORMIK",
-          "products": []
-        },
         {
           "id": "section_xeaoms",
           "title": "multiunit",
+          "order": 1,
           "products": [
             {
               "id": "prod_k7k1jy",
-              "name": "ffffff",
-              "imageUrl": "images/logo.png",
-              "meta": "hhh",
-              "more": "hhhh",
-              "code": "hhhh"
+              "name": "MU 17deg",
+              "imageUrl": "images/photo-2025-11-28-01-19-36.jpg",
+              "meta": "D-4.5      H-1/2/3/4    Hex",
+              "more": "Titanium Grade 5",
+              "code": "12000 AMD",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
             },
             {
               "id": "prod_ah2n9e",
               "name": "MU 17deg",
-              "imageUrl": "images/logo.png",
+              "imageUrl": "images/photo-2025-11-28-01-21-25.jpg",
               "meta": "4",
               "more": "Titanium Grade 5",
-              "code": "Hex"
-            }
-          ]
-        },
-        {
-          "id": "section_7u9rli",
-          "title": "Ti Base",
-          "products": [
-            {
-              "id": "prod_2d0q71",
-              "name": "gggggg",
-              "imageUrl": "images/logo.png",
-              "meta": "HHHHHH",
-              "more": "aaaaa",
-              "code": "eeee"
-            },
-            {
-              "id": "prod_swtk07",
-              "name": "sssdsdsd",
-              "imageUrl": "images/logo.png",
-              "meta": "hhhhh",
-              "more": "jjjjjj",
-              "code": "uuuuu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "brand_1mx065",
-      "name": "Contakt",
-      "description": "",
-      "sections": [
-        {
-          "id": "section_ffsii0",
-          "title": "Mobile",
-          "products": [
-            {
-              "id": "prod_ybbblw",
-              "name": "+37498152850",
-              "imageUrl": "",
-              "meta": "wwhatsapp",
-              "more": "+37498152850",
-              "code": "Beknazaryan 5/6"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "brand_y86mi4",
-      "name": "Osstem",
-      "description": "",
-      "sections": [
-        {
-          "id": "section_s0y5ak",
-          "title": "Ti Base",
-          "products": [
-            {
-              "id": "prod_z92hsn",
-              "name": "D-4.3 H-1.2.3.4",
-              "imageUrl": "",
-              "meta": "3",
-              "more": "Hex",
-              "code": "Ti Grade 5"
+              "code": "Hex",
+              "order": 2,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
             }
           ]
         }
@@ -137,10 +43,12 @@
       "id": "brand_l8s6wj",
       "name": "Biotech Kontakt",
       "description": "",
+      "order": 2,
       "sections": [
         {
           "id": "section_1kbr3s",
           "title": "Ti Base",
+          "order": 1,
           "products": [
             {
               "id": "prod_bzjg5g",
@@ -148,7 +56,11 @@
               "imageUrl": "images/logo.png",
               "meta": "H-1.2.3.4",
               "more": "Hex",
-              "code": "Ti Grade 5"
+              "code": "Ti Grade 5",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
             }
           ]
         }
@@ -158,10 +70,12 @@
       "id": "brand_wlcpcj",
       "name": "NeoDent",
       "description": "",
+      "order": 3,
       "sections": [
         {
           "id": "section_wj22ub",
           "title": "MultiUnit",
+          "order": 1,
           "products": [
             {
               "id": "prod_rb7tjr",
@@ -169,13 +83,18 @@
               "imageUrl": "images/logo.png",
               "meta": "ghjghjghj",
               "more": "eferrwtrfewrf",
-              "code": "hkjhjkhjkhjk"
+              "code": "hkjhjkhjkhjk",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
             }
           ]
         },
         {
           "id": "section_w2gcnd",
           "title": "Ti Base",
+          "order": 2,
           "products": [
             {
               "id": "prod_2os4ic",
@@ -183,7 +102,119 @@
               "imageUrl": "images/logo.png",
               "meta": "jkhkhjkh",
               "more": "hjkfhgjdg",
-              "code": "hgdfghdf"
+              "code": "hgdfghdf",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_kn0arc",
+      "name": "Contact",
+      "description": "",
+      "order": 4,
+      "sections": [
+        {
+          "id": "section_g324uv",
+          "title": "Phone",
+          "order": 1,
+          "products": [
+            {
+              "id": "prod_p9zjcy",
+              "name": "Phone: +374 98152850",
+              "imageUrl": "images/logo.png",
+              "meta": "Whats App: +374 98152850",
+              "more": "technoar@gmail.com",
+              "code": "Beknazaryan 5/6",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_ruwyzt",
+      "name": "Materials",
+      "description": "",
+      "order": 5,
+      "sections": [
+        {
+          "id": "section_cohv74",
+          "title": "Titanium",
+          "order": 1,
+          "products": [
+            {
+              "id": "prod_04p4ob",
+              "name": "Titanium Grade 5",
+              "imageUrl": "images/photo-2025-11-28-01-21-25.jpg",
+              "meta": "Made in Swiss",
+              "more": "ISSO",
+              "code": "MMMMM",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_kcma5k",
+      "name": "Osstem",
+      "description": "",
+      "order": 6,
+      "sections": [
+        {
+          "id": "section_b1xhqc",
+          "title": "Autment",
+          "order": 1,
+          "products": [
+            {
+              "id": "prod_ehb4k1",
+              "name": "fbvfdb",
+              "imageUrl": "images/photo-2025-11-28-01-21-25.jpg",
+              "meta": "D-7 H-1.2.3",
+              "more": "dfvbfdbv",
+              "code": "dfvdf",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand_rdo0k7",
+      "name": "nobel",
+      "description": "",
+      "order": 7,
+      "sections": [
+        {
+          "id": "section_7s83xe",
+          "title": "Ti Cap",
+          "order": 1,
+          "products": [
+            {
+              "id": "prod_0umj5n",
+              "name": "fdgvdfb",
+              "imageUrl": "images/photo-2025-11-28-01-21-25.jpg",
+              "meta": "dfbv",
+              "more": "vbdf",
+              "code": "fbvdfv",
+              "order": 1,
+              "angleDeg": null,
+              "material": "",
+              "priceAMD": null
             }
           ]
         }

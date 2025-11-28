@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #f5f5f5;
-      --card-bg: #ffffff;
-      --border: #e0e0e0;
-      --text-main: #222222;
-      --text-muted: #777777;
-      --accent: #000000;
-      --radius-lg: 10px;
+      --bg: #e5e7f1;
+      --card-bg: #f9fafb;
+      --border: #d1d5db;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --radius-lg: 12px;
     }
 
     * {
@@ -23,7 +23,7 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
-      background: var(--bg);
+      background: radial-gradient(circle at 0% 0%, #eef2ff, #e5e7eb);
       color: var(--text-main);
     }
 
@@ -34,8 +34,8 @@
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+      border-bottom: none;
       padding: 12px 16px;
       display: flex;
       align-items: center;
@@ -44,6 +44,8 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.35);
+      color: #f9fafb;
     }
 
     header h1 {
@@ -54,18 +56,33 @@
 
     .btn-back {
       font-size: 12px;
-      padding: 6px 10px;
+      padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
+      border: 1px solid rgba(248, 250, 252, 0.7);
+      background: rgba(248, 250, 252, 0.15);
       cursor: pointer;
+      color: #f9fafb;
+      backdrop-filter: blur(8px);
+      transition: background 0.15s ease, transform 0.1s ease,
+        box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-back:hover {
+      background: rgba(248, 250, 252, 0.28);
+      border-color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.45);
     }
 
     .content {
       max-width: 960px;
-      margin: 0 auto;
+      margin: 16px auto 32px;
       padding: 16px;
       width: 100%;
+      background: rgba(249, 250, 251, 0.92);
+      border-radius: 20px;
+      box-shadow: 0 24px 40px rgba(15, 23, 42, 0.16);
+      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     .toolbar-row {
@@ -96,11 +113,46 @@
 
     select#brandSelector {
       font-size: 12px;
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: #fff;
+      background: #ffffff;
       max-width: 180px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    select#brandSelector:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+      background: #f9fafb;
+    }
+
+    .btn-info-toggle {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      cursor: pointer;
+      white-space: nowrap;
+      color: var(--text-main);
+      transition: background 0.15s ease, color 0.15s ease,
+        border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-info-toggle:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.14);
+      transform: translateY(-1px);
+    }
+
+    .btn-info-toggle.active {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.35);
     }
 
     h2 {
@@ -117,6 +169,7 @@
       margin-top: 24px;
       margin-bottom: 8px;
       text-transform: lowercase;
+      color: var(--text-main);
     }
 
     .section-title::first-letter {
@@ -142,12 +195,15 @@
       border: 1px solid var(--border);
       padding: 16px;
       cursor: pointer;
-      transition: box-shadow 0.15s ease, transform 0.1s ease;
+      transition: box-shadow 0.18s ease, transform 0.1s ease,
+        border-color 0.18s ease, background 0.18s ease;
     }
 
     .brand-card:hover {
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.16);
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.5);
+      background: #f3f4ff;
     }
 
     .brand-card-title {
@@ -172,6 +228,20 @@
       display: flex;
       gap: 12px;
       align-items: center;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+      transition: transform 0.12s ease, box-shadow 0.15s ease,
+        border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .product-card + .product-card {
+      margin-top: 8px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+      border-color: rgba(37, 99, 235, 0.45);
+      background: #f3f4fd;
     }
 
     .product-image-wrap {
@@ -180,15 +250,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
-      background: #f0f0f0;
-      border-radius: 8px;
+      padding: 6px;
+      background: #e5e7f5;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     .product-image {
       max-width: 100%;
       max-height: 120px;
-      border-radius: 6px;
+      border-radius: 8px;
       object-fit: contain;
     }
 
@@ -227,6 +298,22 @@
       color: var(--text-muted);
       margin-bottom: 8px;
     }
+
+    .info-block-divider {
+      border-top: 1px dashed var(--border);
+      margin: 24px 0 16px;
+    }
+
+    .info-block-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* 👇 որդէս view switch՝ ցուցադրելու / թաքցնելու համար */
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
@@ -244,10 +331,18 @@
           <select id="brandSelector">
             <!-- options filled by JS -->
           </select>
+          <button class="btn-info-toggle" id="btnToggleInfo" type="button">
+            Info pages
+          </button>
         </div>
       </div>
 
       <div id="catalogRoot"></div>
+
+      <!-- Info pages (Contact, Materials, Technology, CAD CAM, ...) -->
+      <div class="info-block-divider"></div>
+      <div class="info-block-label">Additional info pages</div>
+      <div id="infoPagesRoot"></div>
     </main>
   </div>
 
@@ -255,10 +350,23 @@
     let CATALOG = { brands: [] };
     let activeBrandId = null; // null = "All brands"
 
+    // brand buckets / info state
+    let allBrands = [];
+    let normalBrands = [];
+    let infoPages = [];
+    let showInfoPages = false;
+
+    // names used as "info pages" (lowercase)
+    const INFO_PAGE_NAMES = ["contact", "materials", "technology", "cad cam"];
+
     const catalogRootEl = document.getElementById("catalogRoot");
+    const infoPagesRootEl = document.getElementById("infoPagesRoot");
     const breadcrumbsEl = document.getElementById("breadcrumbs");
     const brandSelectEl = document.getElementById("brandSelector");
     const btnBackIndex = document.getElementById("btnBackIndex");
+    const btnToggleInfo = document.getElementById("btnToggleInfo");
+    const infoDividerEl = document.querySelector(".info-block-divider");
+    const infoLabelEl = document.querySelector(".info-block-label");
 
     function escapeHtml(str) {
       if (str == null) return "";
@@ -270,8 +378,30 @@
         .replace(/'/g, "&#039;");
     }
 
+    function normalizeBrandName(name) {
+      return (name || "")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+    }
+
+    function rebuildBrandBuckets() {
+      allBrands = CATALOG.brands || [];
+      normalBrands = [];
+      infoPages = [];
+
+      allBrands.forEach(function (b) {
+        const nm = normalizeBrandName(b.name || "");
+        if (INFO_PAGE_NAMES.indexOf(nm) !== -1) {
+          infoPages.push(b); // Contact / Materials / Technology / CAD CAM ...
+        } else {
+          normalBrands.push(b); // real implant brands
+        }
+      });
+    }
+
     function findBrand(id) {
-      return (CATALOG.brands || []).find(function (b) {
+      return (allBrands || []).find(function (b) {
         return b.id === id;
       }) || null;
     }
@@ -279,12 +409,12 @@
     // ---------- Brand selector (dropdown) ----------
     function renderBrandSelector() {
       if (!brandSelectEl) return;
-      const brands = CATALOG.brands || [];
+      const brands = normalBrands || [];
       let html = '<option value="">All brands</option>';
 
       brands.forEach(function (b) {
         const id = b.id || "";
-        const selected = id && id === activeBrandId ? ' selected' : "";
+        const selected = id && id === activeBrandId ? " selected" : "";
         html +=
           '<option value="' +
           escapeHtml(id) +
@@ -296,13 +426,15 @@
       });
 
       brandSelectEl.innerHTML = html;
-
-      // sync value in case activeBrandId is null/undefined
       brandSelectEl.value = activeBrandId || "";
     }
 
     function renderBreadcrumbs() {
       if (!breadcrumbsEl) return;
+      if (showInfoPages) {
+        breadcrumbsEl.textContent = "Info pages";
+        return;
+      }
       if (!activeBrandId) {
         breadcrumbsEl.textContent = "All brands";
       } else {
@@ -315,11 +447,11 @@
       }
     }
 
-    // ---------- Catalog rendering ----------
+    // ---------- Catalog rendering (brands only) ----------
     function renderCatalog() {
       if (!catalogRootEl) return;
 
-      const brands = CATALOG.brands || [];
+      const brands = normalBrands || [];
 
       if (!brands.length) {
         catalogRootEl.innerHTML =
@@ -345,9 +477,7 @@
             "</div>";
           html +=
             '<div class="brand-card-desc">' +
-            escapeHtml(
-              b.description || "Click to open products"
-            ) +
+            escapeHtml(b.description || "Click to open products") +
             "</div>";
           html += "</div>";
         });
@@ -355,7 +485,6 @@
         html += "</div>";
         catalogRootEl.innerHTML = html;
 
-        // attach events
         const cards = catalogRootEl.querySelectorAll(".brand-card");
         cards.forEach(function (card) {
           card.addEventListener("click", function () {
@@ -409,7 +538,7 @@
         } else {
           section.products.forEach(function (p) {
             html += '<div class="product-card">';
-            // image
+
             html += '<div class="product-image-wrap">';
             if (p.imageUrl) {
               html +=
@@ -424,7 +553,6 @@
             }
             html += "</div>";
 
-            // info
             html += '<div class="product-info">';
             html +=
               '<div class="product-name">' +
@@ -448,16 +576,133 @@
                 escapeHtml(p.code) +
                 "</div>";
             }
-            html += "</div>"; // .product-info
+            html += "</div>";
 
-            html += "</div>"; // .product-card
+            html += "</div>";
           });
         }
 
-        html += "</div>"; // .product-section
+        html += "</div>";
       });
 
       catalogRootEl.innerHTML = html;
+    }
+
+    // ---------- Info pages rendering (Contact, Materials, CAD CAM, ...) ----------
+    function renderInfoPages() {
+      if (!infoPagesRootEl) return;
+
+      // OFF state կամ info չկան → թաքցնում ենք info view, ցույց ենք տալիս brands
+      if (!showInfoPages || !infoPages.length) {
+        infoPagesRootEl.innerHTML = "";
+
+        if (infoDividerEl) infoDividerEl.classList.add("hidden");
+        if (infoLabelEl) infoLabelEl.classList.add("hidden");
+        if (catalogRootEl) catalogRootEl.classList.remove("hidden");
+        if (brandSelectEl) brandSelectEl.disabled = false;
+
+        if (btnToggleInfo) {
+          btnToggleInfo.classList.remove("active");
+          btnToggleInfo.textContent = "Info pages";
+        }
+
+        renderBreadcrumbs();
+        return;
+      }
+
+      // ON state → ծածկում ենք brands, ցույց ենք տալիս միայն info pages
+      if (infoDividerEl) infoDividerEl.classList.remove("hidden");
+      if (infoLabelEl) infoLabelEl.classList.remove("hidden");
+      if (catalogRootEl) catalogRootEl.classList.add("hidden");
+      if (brandSelectEl) brandSelectEl.disabled = true;
+
+      renderBreadcrumbs(); // breadcrumbs = "Info pages"
+
+      let html = "";
+
+      infoPages.forEach(function (brand) {
+        html += '<section class="product-section">';
+        html += "<h2>" + escapeHtml(brand.name || "") + "</h2>";
+
+        if (brand.description) {
+          html +=
+            '<p class="hint">' + escapeHtml(brand.description) + "</p>";
+        }
+
+        if (!brand.sections || !brand.sections.length) {
+          html +=
+            '<p class="hint">No sections for this page yet.</p>';
+        } else {
+          brand.sections.forEach(function (section) {
+            html += '<div class="product-section">';
+            html +=
+              '<div class="section-title">' +
+              escapeHtml(section.title || "") +
+              "</div>";
+
+            if (!section.products || !section.products.length) {
+              html +=
+                '<p class="hint">No products in this section yet.</p>';
+            } else {
+              section.products.forEach(function (p) {
+                html += '<div class="product-card">';
+
+                html += '<div class="product-image-wrap">';
+                if (p.imageUrl) {
+                  html +=
+                    '<img class="product-image" src="' +
+                    escapeHtml(p.imageUrl) +
+                    '" alt="' +
+                    escapeHtml(p.name || "") +
+                    '">';
+                } else {
+                  html +=
+                    '<span style="font-size:11px;color:#999;">No image</span>';
+                }
+                html += "</div>";
+
+                html += '<div class="product-info">';
+                html +=
+                  '<div class="product-name">' +
+                  escapeHtml(p.name || "") +
+                  "</div>";
+                if (p.meta) {
+                  html +=
+                    '<div class="product-meta">' +
+                    escapeHtml(p.meta) +
+                    "</div>";
+                }
+                if (p.more) {
+                  html +=
+                    '<div class="product-more">' +
+                    escapeHtml(p.more) +
+                    "</div>";
+                }
+                if (p.code) {
+                  html +=
+                    '<div class="product-code">' +
+                    escapeHtml(p.code) +
+                    "</div>";
+                }
+                html += "</div>";
+
+                html += "</div>";
+              });
+            }
+
+            html += "</div>";
+          });
+        }
+
+        html += "</section>";
+      });
+
+      infoPagesRootEl.innerHTML = html;
+
+      if (btnToggleInfo) {
+        btnToggleInfo.classList.add("active");
+        btnToggleInfo.textContent = "Hide info pages";
+      }
     }
 
     // ---------- Data load ----------
@@ -468,9 +713,11 @@
         })
         .then(function (data) {
           CATALOG = data || { brands: [] };
+          rebuildBrandBuckets();
         })
         .catch(function () {
           CATALOG = { brands: [] };
+          rebuildBrandBuckets();
         });
     }
 
@@ -479,9 +726,11 @@
       if (btnBackIndex) {
         btnBackIndex.addEventListener("click", function () {
           activeBrandId = null;
+          showInfoPages = false;
           renderBrandSelector();
           renderBreadcrumbs();
           renderCatalog();
+          renderInfoPages();
         });
       }
 
@@ -489,8 +738,17 @@
         brandSelectEl.addEventListener("change", function () {
           const val = brandSelectEl.value;
           activeBrandId = val || null;
+          showInfoPages = false; // եթե brand ենք ընտրում, դուրս ենք գալիս info view-ից
           renderBreadcrumbs();
           renderCatalog();
+          renderInfoPages();
+        });
+      }
+
+      if (btnToggleInfo) {
+        btnToggleInfo.addEventListener("click", function () {
+          showInfoPages = !showInfoPages;
+          renderInfoPages();
         });
       }
 
@@ -498,6 +756,7 @@
         renderBrandSelector();
         renderBreadcrumbs();
         renderCatalog();
+        renderInfoPages(); // initial (hidden)
       });
     })();
   </script>
