@@ -1,505 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Technoar® – Pro Catalog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>Technoar – Entry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --bg: #f5f5f5;
-      --card-bg: #ffffff;
-      --border: #e0e0e0;
-      --text-main: #222222;
-      --text-muted: #777777;
-      --accent: #000000;
-      --radius-lg: 10px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    /* Simple minimal styling, just for orientation */
     body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-    }
-
-    .page {
+      padding: 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header h1 {
-      font-size: 16px;
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .btn-back {
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 16px;
-      width: 100%;
-    }
-
-    .toolbar-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .breadcrumbs {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .brand-selector-wrap {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-    }
-
-    .brand-selector-wrap label {
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    select#brandSelector {
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-      max-width: 180px;
-    }
-
-    h2 {
-      font-size: 18px;
-      margin: 0 0 8px;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    .section-title {
-      font-size: 14px;
-      margin-top: 24px;
-      margin-bottom: 8px;
-      text-transform: lowercase;
-    }
-
-    .section-title::first-letter {
-      text-transform: uppercase;
-    }
-
-    .brand-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    @media (min-width: 640px) {
-      .brand-cards {
-        flex-direction: row;
-      }
-    }
-
-    .brand-card {
-      flex: 1;
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 16px;
-      cursor: pointer;
-      transition: box-shadow 0.15s ease, transform 0.1s ease;
-    }
-
-    .brand-card:hover {
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      transform: translateY(-1px);
-    }
-
-    .brand-card-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .brand-card-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .product-section {
-      margin-bottom: 24px;
-    }
-
-    .product-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 12px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .product-image-wrap {
-      flex: 0 0 120px;
-      max-width: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
-      background: #f0f0f0;
+      background: #f5f5f5;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 24px 28px;
       border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.06);
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
     }
 
-    .product-image {
-      max-width: 100%;
-      max-height: 120px;
+    h1 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 6px 0;
+      padding: 10px 14px;
       border-radius: 6px;
-      object-fit: contain;
-    }
-
-    .product-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .product-name {
+      border: 1px solid #ddd;
+      background: #fff;
+      text-decoration: none;
+      color: #222;
       font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
+      cursor: pointer;
     }
 
-    .product-meta {
-      font-size: 13px;
-      color: var(--text-main);
-      margin-bottom: 2px;
+    .btn.primary {
+      background: #111;
+      color: #fff;
+      border-color: #111;
     }
 
-    .product-more {
+    small {
+      display: block;
+      margin-top: 10px;
+      color: #777;
       font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
-
-    .product-code {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-    }
-
-    .hint {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <h1>Technoar® – Pro Catalog</h1>
-      <button class="btn-back" id="btnBackIndex">Back to index</button>
-    </header>
+  <div class="box">
+    <h1>Technoar® Internal Panel</h1>
 
-    <main class="content">
-      <div class="toolbar-row">
-        <div class="breadcrumbs" id="breadcrumbs">All brands</div>
-        <div class="brand-selector-wrap">
-          <label for="brandSelector">Brand:</label>
-          <select id="brandSelector">
-            <!-- options filled by JS -->
-          </select>
-        </div>
-      </div>
+    <button class="btn primary" id="btnCatalog">Open Catalog</button>
+    <button class="btn" id="btnAdmin">Open Admin</button>
 
-      <div id="catalogRoot"></div>
-    </main>
+    <small>Internal use only</small>
   </div>
 
   <script>
-    let CATALOG = { brands: [] };
-    let activeBrandId = null; // null = "All brands"
+    // ============================================
+    // [TNA-INDEX] SECTION 1: Navigation buttons
+    // - Connects buttons to Technoar.html and Admin.html
+    // - If later you want password checks, we extend here
+    // ============================================
+    (function () {
+      var btnCatalog = document.getElementById('btnCatalog');
+      var btnAdmin   = document.getElementById('btnAdmin');
 
-    const catalogRootEl = document.getElementById("catalogRoot");
-    const breadcrumbsEl = document.getElementById("breadcrumbs");
-    const brandSelectEl = document.getElementById("brandSelector");
-    const btnBackIndex = document.getElementById("btnBackIndex");
-
-    function escapeHtml(str) {
-      if (str == null) return "";
-      return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-    function findBrand(id) {
-      return (CATALOG.brands || []).find(function (b) {
-        return b.id === id;
-      }) || null;
-    }
-
-    // ---------- Brand selector (dropdown) ----------
-    function renderBrandSelector() {
-      if (!brandSelectEl) return;
-      const brands = CATALOG.brands || [];
-      let html = '<option value="">All brands</option>';
-
-      brands.forEach(function (b) {
-        const id = b.id || "";
-        const selected = id && id === activeBrandId ? ' selected' : "";
-        html +=
-          '<option value="' +
-          escapeHtml(id) +
-          '"' +
-          selected +
-          ">" +
-          escapeHtml(b.name || "(no name)") +
-          "</option>";
-      });
-
-      brandSelectEl.innerHTML = html;
-
-      // sync value in case activeBrandId is null/undefined
-      brandSelectEl.value = activeBrandId || "";
-    }
-
-    function renderBreadcrumbs() {
-      if (!breadcrumbsEl) return;
-      if (!activeBrandId) {
-        breadcrumbsEl.textContent = "All brands";
-      } else {
-        const brand = findBrand(activeBrandId);
-        if (!brand) {
-          breadcrumbsEl.textContent = "All brands";
-        } else {
-          breadcrumbsEl.textContent = "All brands · " + (brand.name || "");
-        }
-      }
-    }
-
-    // ---------- Catalog rendering ----------
-    function renderCatalog() {
-      if (!catalogRootEl) return;
-
-      const brands = CATALOG.brands || [];
-
-      if (!brands.length) {
-        catalogRootEl.innerHTML =
-          '<p class="hint">No brands in catalog.json yet.</p>';
-        return;
-      }
-
-      // All brands view
-      if (!activeBrandId) {
-        let html = "";
-        html += "<h2>All brands</h2>";
-        html +=
-          '<p class="hint">Select implant system</p><div class="brand-cards">';
-
-        brands.forEach(function (b) {
-          html +=
-            '<div class="brand-card" data-brand-id="' +
-            escapeHtml(b.id || "") +
-            '">';
-          html +=
-            '<div class="brand-card-title">' +
-            escapeHtml(b.name || "(no name)") +
-            "</div>";
-          html +=
-            '<div class="brand-card-desc">' +
-            escapeHtml(
-              b.description || "Click to open products"
-            ) +
-            "</div>";
-          html += "</div>";
-        });
-
-        html += "</div>";
-        catalogRootEl.innerHTML = html;
-
-        // attach events
-        const cards = catalogRootEl.querySelectorAll(".brand-card");
-        cards.forEach(function (card) {
-          card.addEventListener("click", function () {
-            const id = card.getAttribute("data-brand-id");
-            if (!id) return;
-            activeBrandId = id;
-            renderBrandSelector();
-            renderBreadcrumbs();
-            renderCatalog();
-          });
-        });
-
-        return;
-      }
-
-      // Single brand view
-      const brand = findBrand(activeBrandId);
-      if (!brand) {
-        activeBrandId = null;
-        renderBrandSelector();
-        renderBreadcrumbs();
-        renderCatalog();
-        return;
-      }
-
-      let html = "";
-      html += "<h2>" + escapeHtml(brand.name || "") + "</h2>";
-
-      if (brand.description) {
-        html +=
-          '<p class="hint">' + escapeHtml(brand.description) + "</p>";
-      }
-
-      if (!brand.sections || !brand.sections.length) {
-        html +=
-          '<p class="hint">No sections for this brand yet.</p>';
-        catalogRootEl.innerHTML = html;
-        return;
-      }
-
-      brand.sections.forEach(function (section) {
-        html += '<div class="product-section">';
-        html +=
-          '<div class="section-title">' +
-          escapeHtml(section.title || "") +
-          "</div>";
-
-        if (!section.products || !section.products.length) {
-          html +=
-            '<p class="hint">No products in this section yet.</p>';
-        } else {
-          section.products.forEach(function (p) {
-            html += '<div class="product-card">';
-            // image
-            html += '<div class="product-image-wrap">';
-            if (p.imageUrl) {
-              html +=
-                '<img class="product-image" src="' +
-                escapeHtml(p.imageUrl) +
-                '" alt="' +
-                escapeHtml(p.name || "") +
-                '">';
-            } else {
-              html +=
-                '<span style="font-size:11px;color:#999;">No image</span>';
-            }
-            html += "</div>";
-
-            // info
-            html += '<div class="product-info">';
-            html +=
-              '<div class="product-name">' +
-              escapeHtml(p.name || "") +
-              "</div>";
-            if (p.meta) {
-              html +=
-                '<div class="product-meta">' +
-                escapeHtml(p.meta) +
-                "</div>";
-            }
-            if (p.more) {
-              html +=
-                '<div class="product-more">' +
-                escapeHtml(p.more) +
-                "</div>";
-            }
-            if (p.code) {
-              html +=
-                '<div class="product-code">' +
-                escapeHtml(p.code) +
-                "</div>";
-            }
-            html += "</div>"; // .product-info
-
-            html += "</div>"; // .product-card
-          });
-        }
-
-        html += "</div>"; // .product-section
-      });
-
-      catalogRootEl.innerHTML = html;
-    }
-
-    // ---------- Data load ----------
-    function loadCatalog() {
-      return fetch("catalog.json")
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (data) {
-          CATALOG = data || { brands: [] };
-        })
-        .catch(function () {
-          CATALOG = { brands: [] };
-        });
-    }
-
-    // ---------- Init ----------
-    (function init() {
-      if (btnBackIndex) {
-        btnBackIndex.addEventListener("click", function () {
-          activeBrandId = null;
-          renderBrandSelector();
-          renderBreadcrumbs();
-          renderCatalog();
+      if (btnCatalog) {
+        btnCatalog.addEventListener('click', function () {
+          // TODO: if you ever want a password gate for catalog,
+          // add logic here before redirect.
+          window.location.href = 'Technoar.html';
         });
       }
 
-      if (brandSelectEl) {
-        brandSelectEl.addEventListener("change", function () {
-          const val = brandSelectEl.value;
-          activeBrandId = val || null;
-          renderBreadcrumbs();
-          renderCatalog();
+      if (btnAdmin) {
+        btnAdmin.addEventListener('click', function () {
+          // TODO: later we can add a simple password prompt here.
+          window.location.href = 'Admin.html';
         });
       }
-
-      loadCatalog().then(function () {
-        renderBrandSelector();
-        renderBreadcrumbs();
-        renderCatalog();
-      });
     })();
+    // ============================================
+    // [TNA-INDEX] END
+    // ============================================
   </script>
 </body>
 </html>
